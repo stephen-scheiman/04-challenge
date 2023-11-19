@@ -15,10 +15,53 @@ var questions = [
     choices: ["true", "false", "NaN", "undefined"],
     answer: 0,
   },
+  {
+    question: "Which of the below is proper syntax for an IF statement;",
+    choices: ["if i=5 then", "if i=5", "if i==5 then", "if(i==5)"],
+    answer: 3,
+  },
+  {
+    question:
+      "What is the correct location to reference an external JavaScript file?;",
+    choices: [
+      "The <head> section",
+      "The <footer> section",
+      "The <body> section",
+      "Either <head> or <body> section",
+    ],
+    answer: 3,
+  },
+  {
+    question: "How do you call a function named myFunction()?;",
+    choices: [
+      "function myFunction()",
+      "call myFunction()",
+      "myFunction()",
+      "call function myFunction()",
+    ],
+    answer: 2,
+  },
+  {
+    question:
+      "What is the correct syntax for referring to an external script named 'xxx.js'?;",
+    choices: [
+      "<script href='xxx.js'>",
+      "<script name='xxx.js'>",
+      "<script src='xxx.js'>",
+      "<href script='xxx.js'>",
+    ],
+    answer: 2,
+  },
+  {
+    question: "Which HTML Element holds the location of a JavaScript file?;",
+    choices: ["js tag", "script tag", "file tag", "java tag"],
+    answer: 1,
+  },
 ];
 
 //Create a variable to hold the question number
-var questionNum = 1;
+var questionNum = Math.floor(Math.random() * questions.length);
+console.log(questionNum);
 
 //Variable to hold the score
 var score = 0;
@@ -36,21 +79,21 @@ var choiceFourEl = document.getElementById("choiceFour");
 //Sounds
 var audio = document.getElementById("audio");
 
+//TODO: Turn this into a function so we can call it in a loop through the q&a
+questionEl.textContent = questions[questionNum].question;
+choiceOneEl.textContent = questions[questionNum].choices[0];
+choiceTwoEl.textContent = questions[questionNum].choices[1];
+choiceThreeEl.textContent = questions[questionNum].choices[2];
+choiceFourEl.textContent = questions[questionNum].choices[3];
 
-  questionEl.textContent = questions[questionNum].question;
-  choiceOneEl.textContent = questions[questionNum].choices[0];
-  choiceTwoEl.textContent = questions[questionNum].choices[1];
-  choiceThreeEl.textContent = questions[questionNum].choices[2];
-  choiceFourEl.textContent = questions[questionNum].choices[3];
-
-
+//Use event listeners to detect mouseover and click for selecting answer choice
 function getAnswer() {
   choiceOneEl.addEventListener("mouseover", function () {
     choiceOneEl.setAttribute(
       "style",
       "font-style: italic; font-weight: bolder; font-size:20px;"
     );
-});
+  });
   choiceOneEl.addEventListener("mouseout", function () {
     choiceOneEl.setAttribute(
       "style",
@@ -90,7 +133,6 @@ function getAnswer() {
       "style",
       "font-style: italic; font-weight: bolder; font-size:20px;"
     );
-
   });
   choiceThreeEl.addEventListener("mouseout", function () {
     choiceThreeEl.setAttribute(
@@ -111,7 +153,6 @@ function getAnswer() {
       "style",
       "font-style: italic; font-weight: bolder; font-size:20px;"
     );
-
   });
   choiceFourEl.addEventListener("mouseout", function () {
     choiceFourEl.setAttribute(
@@ -128,17 +169,17 @@ function getAnswer() {
     setAnswer(choice);
   });
 }
-function setAnswer(choice){
-  if (choice == questions[questionNum].answer){
+//See if the choice is the correct answer or not
+function setAnswer(choice) {
+  if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
   } else {
     console.log("Incorrect Answer");
   }
 }
-
+//TODO: Play audio on hover and click
 function play() {
-var audio = document.getElementById("audio")
+  var audio = document.getElementById("audio");
 }
-
 
 getAnswer();

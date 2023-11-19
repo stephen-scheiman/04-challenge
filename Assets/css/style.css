@@ -26,9 +26,15 @@ li {
 
 body {
     background-color: antiquewhite;
+    font-family: fantasy;
 }
 
 h1 {
     display: flex;
-    justify-self: start;
+    text-align: center;
+    justify-content: center;
+}
+
+hr {
+    margin-bottom: 50px;
 }

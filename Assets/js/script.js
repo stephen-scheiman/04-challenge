@@ -89,82 +89,74 @@ choiceFourEl.textContent = questions[questionNum].choices[3];
 //Use event listeners to detect mouseover and click for selecting answer choice
 function getAnswer() {
   choiceOneEl.addEventListener("mouseover", function () {
-    choiceOneEl.setAttribute(
-      "style",
-      "font-style: italic; font-weight: bolder; font-size:25px;"
-    );
+    choiceOneEl.style.fontStyle="italic";
+    choiceOneEl.style.fontWeight="bold";
+    choiceOneEl.style.fontSize="25px";
   });
   choiceOneEl.addEventListener("mouseout", function () {
-    choiceOneEl.setAttribute(
-      "style",
-      "font-style: normal; font-weight: normal; font-size:16px;"
-    );
+    choiceOneEl.style.fontStyle="normal";
+    choiceOneEl.style.fontWeight="normal";
+    choiceOneEl.style.fontSize="16px";
   });
   choiceOneEl.addEventListener("click", function () {
-    choiceOneEl.setAttribute(
-      "style",
-      "font-style: normal; font-weight: normal; font-size:16px;"
-    );
+    choiceOneEl.style.fontStyle="italic";
+    choiceOneEl.style.fontWeight="bold";
+    choiceOneEl.style.fontSize="25px";
+    choiceOneEl.style.color="red";
     choice = 0;
     setAnswer(choice);
   });
   choiceTwoEl.addEventListener("mouseover", function () {
-    choiceTwoEl.setAttribute(
-      "style",
-      "font-style: italic; font-weight: bolder; font-size:25px;"
-    );
+    choiceTwoEl.style.fontStyle="italic";
+    choiceTwoEl.style.fontWeight="bold";
+    choiceTwoEl.style.fontSize="25px";
   });
   choiceTwoEl.addEventListener("mouseout", function () {
-    choiceTwoEl.setAttribute(
-      "style",
-      "font-style: normal; font-weight: normal; font-size:16px;"
-    );
+    choiceTwoEl.style.fontStyle="normal";
+    choiceTwoEl.style.fontWeight="normal";
+    choiceTwoEl.style.fontSize="16px";
   });
   choiceTwoEl.addEventListener("click", function () {
-    choiceTwoEl.setAttribute(
-      "style",
-      "font-style: normal; font-weight: normal; font-size:16px;"
-    );
+    choiceTwoEl.style.fontStyle="italic";
+    choiceTwoEl.style.fontWeight="bold";
+    choiceTwoEl.style.fontSize="25px";
+    choiceTwoEl.style.color="red";
     choice = 1;
     setAnswer(choice);
   });
   choiceThreeEl.addEventListener("mouseover", function () {
-    choiceThreeEl.setAttribute(
-      "style",
-      "font-style: italic; font-weight: bolder; font-size:25px;"
-    );
+    choiceThreeEl.style.fontStyle="italic";
+    choiceThreeEl.style.fontWeight="bold";
+    choiceThreeEl.style.fontSize="25px";
   });
   choiceThreeEl.addEventListener("mouseout", function () {
-    choiceThreeEl.setAttribute(
-      "style",
-      "font-style: normal; font-weight: normal; font-size:16px;"
-    );
+    choiceThreeEl.style.fontStyle="normal";
+    choiceThreeEl.style.fontWeight="normal";
+    choiceThreeEl.style.fontSize="16px";
   });
   choiceThreeEl.addEventListener("click", function () {
-    choiceThreeEl.setAttribute(
-      "style",
-      "font-style: normal; font-weight: normal; font-size:16px;"
-    );
+    choiceThreeEl.style.fontStyle="italic";
+    choiceThreeEl.style.fontWeight="bold";
+    choiceThreeEl.style.fontSize="25px";
+    choiceThreeEl.style.color="red";
     choice = 2;
     setAnswer(choice);
   });
   choiceFourEl.addEventListener("mouseover", function () {
-    choiceFourEl.setAttribute(
-      "style",
-      "font-style: italic; font-weight: bolder; font-size:25px;"
-    );
+    choiceFourEl.style.fontStyle="italic";
+    choiceFourEl.style.fontWeight="bold";
+    choiceFourEl.style.fontSize="25px";
   });
   choiceFourEl.addEventListener("mouseout", function () {
-    choiceFourEl.setAttribute(
-      "style",
-      "font-style: normal; font-weight: normal; font-size:16px;"
-    );
+    choiceFourEl.style.fontStyle="normal";
+    choiceFourEl.style.fontWeight="normal";
+    choiceFourEl.style.fontSize="16px";
   });
   choiceFourEl.addEventListener("click", function () {
-    choiceFourEl.setAttribute(
-      "style",
-      "font-style: normal; font-weight: normal; font-size:16px;"
-    );
+    choiceFourEl.style.fontStyle="italic";
+    choiceFourEl.style.fontWeight="bold";
+    choiceFourEl.style.fontSize="25px";
+    choiceFourEl.style.color="red";
     choice = 3;
     setAnswer(choice);
   });

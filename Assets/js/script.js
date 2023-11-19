@@ -1,28 +1,28 @@
 //Create an oject to hold the questions and answers
 var questions = [
   {
-    question: "What is the output of this code: console.log(typeof null);",
+    question: "What is the output of this code: console.log(typeof null)",
     choices: ["null", "object", "undefined", "string"],
     answer: 1,
   },
   {
-    question: "What is the output of this code: console.log(2 + '2');",
+    question: "What is the output of this code: console.log(2 + '2')",
     choices: ["4", "22", "NaN", "undefined"],
     answer: 1,
   },
   {
-    question: "What is the output of this code: console.log(2=='2');",
+    question: "What is the output of this code: console.log(2=='2')",
     choices: ["true", "false", "NaN", "undefined"],
     answer: 0,
   },
   {
-    question: "Which of the below is proper syntax for an IF statement;",
+    question: "Which of the below is proper syntax for an IF statement",
     choices: ["if i=5 then", "if i=5", "if i==5 then", "if(i==5)"],
     answer: 3,
   },
   {
     question:
-      "What is the correct location to reference an external JavaScript file?;",
+      "What is the correct location to reference an external JavaScript file?",
     choices: [
       "The <head> section",
       "The <footer> section",
@@ -32,7 +32,7 @@ var questions = [
     answer: 3,
   },
   {
-    question: "How do you call a function named myFunction()?;",
+    question: "How do you call a function named myFunction()?",
     choices: [
       "function myFunction()",
       "call myFunction()",
@@ -43,7 +43,7 @@ var questions = [
   },
   {
     question:
-      "What is the correct syntax for referring to an external script named 'xxx.js'?;",
+      "What is the correct syntax for referring to an external script named 'xxx.js'?",
     choices: [
       "<script href='xxx.js'>",
       "<script name='xxx.js'>",
@@ -53,7 +53,7 @@ var questions = [
     answer: 2,
   },
   {
-    question: "Which HTML Element holds the location of a JavaScript file?;",
+    question: "Which HTML Element holds the location of a JavaScript file?",
     choices: ["js tag", "script tag", "file tag", "java tag"],
     answer: 1,
   },
@@ -91,7 +91,7 @@ function getAnswer() {
   choiceOneEl.addEventListener("mouseover", function () {
     choiceOneEl.setAttribute(
       "style",
-      "font-style: italic; font-weight: bolder; font-size:20px;"
+      "font-style: italic; font-weight: bolder; font-size:25px;"
     );
   });
   choiceOneEl.addEventListener("mouseout", function () {
@@ -111,7 +111,7 @@ function getAnswer() {
   choiceTwoEl.addEventListener("mouseover", function () {
     choiceTwoEl.setAttribute(
       "style",
-      "font-style: italic; font-weight: bolder; font-size:20px;"
+      "font-style: italic; font-weight: bolder; font-size:25px;"
     );
   });
   choiceTwoEl.addEventListener("mouseout", function () {
@@ -131,7 +131,7 @@ function getAnswer() {
   choiceThreeEl.addEventListener("mouseover", function () {
     choiceThreeEl.setAttribute(
       "style",
-      "font-style: italic; font-weight: bolder; font-size:20px;"
+      "font-style: italic; font-weight: bolder; font-size:25px;"
     );
   });
   choiceThreeEl.addEventListener("mouseout", function () {
@@ -151,7 +151,7 @@ function getAnswer() {
   choiceFourEl.addEventListener("mouseover", function () {
     choiceFourEl.setAttribute(
       "style",
-      "font-style: italic; font-weight: bolder; font-size:20px;"
+      "font-style: italic; font-weight: bolder; font-size:25px;"
     );
   });
   choiceFourEl.addEventListener("mouseout", function () {

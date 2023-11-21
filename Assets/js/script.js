@@ -60,8 +60,7 @@ var questions = [
 ];
 
 //Create a variable to hold the question number
-var questionNum = Math.floor(Math.random() * questions.length);
-console.log(questionNum);
+var questionNum = 0;
 
 //Variable to hold the score
 var score = 0;
@@ -69,109 +68,160 @@ var score = 0;
 //Variable to hold the user's answer choice
 var choice = 0;
 
-//Variables to hold questions and answer choices, needed in global context
+//Variables to hold questions and answer choices
 var questionEl = document.getElementById("questions");
 var choiceOneEl = document.getElementById("choiceOne");
 var choiceTwoEl = document.getElementById("choiceTwo");
 var choiceThreeEl = document.getElementById("choiceThree");
 var choiceFourEl = document.getElementById("choiceFour");
 
+//Variable to hold the Start Button element
+var startButton = document.getElementById("startButton");
+
+//Initial timer value (in ms)
+var timer = 60000;
+
+//Start the countdown timer when the user clicks on the Start Button
+startButton.addEventListener("click", function () {
+  //Time that the clock started
+  countdownTimer = setInterval(function () {
+    var now = new Date().getTime();
+    console.log(now);
+    var setTarget = now + timer;
+    console.log(setTarget);
+    var timeLeft = setTarget - now;
+    console.log(timeLeft);
+    var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    console.log(seconds);
+    if (timeLeft <= 0) {
+      clearInterval(countdownTimer);
+    }
+  }, 1000);
+});
+
 //Sounds
 var audio = document.getElementById("audio");
 
-//TODO: Turn this into a function so we can call it in a loop through the q&a
-questionEl.textContent = questions[questionNum].question;
-choiceOneEl.textContent = questions[questionNum].choices[0];
-choiceTwoEl.textContent = questions[questionNum].choices[1];
-choiceThreeEl.textContent = questions[questionNum].choices[2];
-choiceFourEl.textContent = questions[questionNum].choices[3];
+//Display questions and answer choices
+function displayQuestion(questionNum) {
+  questionEl.textContent = questions[questionNum].question;
+  choiceOneEl.textContent = questions[questionNum].choices[0];
+  choiceTwoEl.textContent = questions[questionNum].choices[1];
+  choiceThreeEl.textContent = questions[questionNum].choices[2];
+  choiceFourEl.textContent = questions[questionNum].choices[3];
+}
 
 //Use event listeners to detect mouseover and click for selecting answer choice
-function getAnswer() {
-  choiceOneEl.addEventListener("mouseover", function () {
-    choiceOneEl.style.fontStyle="italic";
-    choiceOneEl.style.fontWeight="bold";
-    choiceOneEl.style.fontSize="25px";
-  });
-  choiceOneEl.addEventListener("mouseout", function () {
-    choiceOneEl.style.fontStyle="normal";
-    choiceOneEl.style.fontWeight="normal";
-    choiceOneEl.style.fontSize="16px";
-  });
-  choiceOneEl.addEventListener("click", function () {
-    choiceOneEl.style.fontStyle="italic";
-    choiceOneEl.style.fontWeight="bold";
-    choiceOneEl.style.fontSize="25px";
-    choiceOneEl.style.color="red";
-    choice = 0;
-    setAnswer(choice);
-  });
-  choiceTwoEl.addEventListener("mouseover", function () {
-    choiceTwoEl.style.fontStyle="italic";
-    choiceTwoEl.style.fontWeight="bold";
-    choiceTwoEl.style.fontSize="25px";
-  });
-  choiceTwoEl.addEventListener("mouseout", function () {
-    choiceTwoEl.style.fontStyle="normal";
-    choiceTwoEl.style.fontWeight="normal";
-    choiceTwoEl.style.fontSize="16px";
-  });
-  choiceTwoEl.addEventListener("click", function () {
-    choiceTwoEl.style.fontStyle="italic";
-    choiceTwoEl.style.fontWeight="bold";
-    choiceTwoEl.style.fontSize="25px";
-    choiceTwoEl.style.color="red";
-    choice = 1;
-    setAnswer(choice);
-  });
-  choiceThreeEl.addEventListener("mouseover", function () {
-    choiceThreeEl.style.fontStyle="italic";
-    choiceThreeEl.style.fontWeight="bold";
-    choiceThreeEl.style.fontSize="25px";
-  });
-  choiceThreeEl.addEventListener("mouseout", function () {
-    choiceThreeEl.style.fontStyle="normal";
-    choiceThreeEl.style.fontWeight="normal";
-    choiceThreeEl.style.fontSize="16px";
-  });
-  choiceThreeEl.addEventListener("click", function () {
-    choiceThreeEl.style.fontStyle="italic";
-    choiceThreeEl.style.fontWeight="bold";
-    choiceThreeEl.style.fontSize="25px";
-    choiceThreeEl.style.color="red";
-    choice = 2;
-    setAnswer(choice);
-  });
-  choiceFourEl.addEventListener("mouseover", function () {
-    choiceFourEl.style.fontStyle="italic";
-    choiceFourEl.style.fontWeight="bold";
-    choiceFourEl.style.fontSize="25px";
-  });
-  choiceFourEl.addEventListener("mouseout", function () {
-    choiceFourEl.style.fontStyle="normal";
-    choiceFourEl.style.fontWeight="normal";
-    choiceFourEl.style.fontSize="16px";
-  });
-  choiceFourEl.addEventListener("click", function () {
-    choiceFourEl.style.fontStyle="italic";
-    choiceFourEl.style.fontWeight="bold";
-    choiceFourEl.style.fontSize="25px";
-    choiceFourEl.style.color="red";
-    choice = 3;
-    setAnswer(choice);
-  });
-}
-//See if the choice is the correct answer or not
-function setAnswer(choice) {
+choiceOneEl.addEventListener("mouseover", function () {
+  choiceOneEl.style.fontStyle = "italic";
+  choiceOneEl.style.fontWeight = "bold";
+  choiceOneEl.style.fontSize = "25px";
+});
+choiceOneEl.addEventListener("mouseout", function () {
+  choiceOneEl.style.fontStyle = "normal";
+  choiceOneEl.style.fontWeight = "normal";
+  choiceOneEl.style.fontSize = "16px";
+});
+choiceOneEl.addEventListener("click", function () {
+  // choiceOneEl.style.fontStyle = "italic";
+  // choiceOneEl.style.fontWeight = "bold";
+  // choiceOneEl.style.fontSize = "25px";
+  // choiceOneEl.style.color = "red";
+  choice = 0;
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
+    questionNum++;
+    displayQuestion(questionNum);
   } else {
     console.log("Incorrect Answer");
+    questionNum++;
+    displayQuestion(questionNum);
   }
-}
+  //setAnswer(choice, questionNum);
+});
+choiceTwoEl.addEventListener("mouseover", function () {
+  choiceTwoEl.style.fontStyle = "italic";
+  choiceTwoEl.style.fontWeight = "bold";
+  choiceTwoEl.style.fontSize = "25px";
+});
+choiceTwoEl.addEventListener("mouseout", function () {
+  choiceTwoEl.style.fontStyle = "normal";
+  choiceTwoEl.style.fontWeight = "normal";
+  choiceTwoEl.style.fontSize = "16px";
+});
+choiceTwoEl.addEventListener("click", function () {
+  // choiceTwoEl.style.fontStyle = "italic";
+  // choiceTwoEl.style.fontWeight = "bold";
+  // choiceTwoEl.style.fontSize = "25px";
+  // choiceTwoEl.style.color = "red";
+  choice = 1;
+  if (choice == questions[questionNum].answer) {
+    console.log("Correct Answer");
+    questionNum++;
+    displayQuestion(questionNum);
+  } else {
+    console.log("Incorrect Answer");
+    questionNum++;
+    displayQuestion(questionNum);
+  }
+  //setAnswer(choice, questionNum);
+});
+choiceThreeEl.addEventListener("mouseover", function () {
+  choiceThreeEl.style.fontStyle = "italic";
+  choiceThreeEl.style.fontWeight = "bold";
+  choiceThreeEl.style.fontSize = "25px";
+});
+choiceThreeEl.addEventListener("mouseout", function () {
+  choiceThreeEl.style.fontStyle = "normal";
+  choiceThreeEl.style.fontWeight = "normal";
+  choiceThreeEl.style.fontSize = "16px";
+});
+choiceThreeEl.addEventListener("click", function () {
+  // choiceThreeEl.style.fontStyle = "italic";
+  // choiceThreeEl.style.fontWeight = "bold";
+  // choiceThreeEl.style.fontSize = "25px";
+  // choiceThreeEl.style.color = "red";
+  choice = 2;
+  if (choice == questions[questionNum].answer) {
+    console.log("Correct Answer");
+    questionNum++;
+    displayQuestion(questionNum);
+  } else {
+    console.log("Incorrect Answer");
+    questionNum++;
+    displayQuestion(questionNum);
+  }
+  //setAnswer(choice, questionNum);
+});
+choiceFourEl.addEventListener("mouseover", function () {
+  choiceFourEl.style.fontStyle = "italic";
+  choiceFourEl.style.fontWeight = "bold";
+  choiceFourEl.style.fontSize = "25px";
+});
+choiceFourEl.addEventListener("mouseout", function () {
+  choiceFourEl.style.fontStyle = "normal";
+  choiceFourEl.style.fontWeight = "normal";
+  choiceFourEl.style.fontSize = "16px";
+});
+choiceFourEl.addEventListener("click", function () {
+  // choiceFourEl.style.fontStyle = "italic";
+  // choiceFourEl.style.fontWeight = "bold";
+  // choiceFourEl.style.fontSize = "25px";
+  // choiceFourEl.style.color = "red";
+  choice = 3;
+  if (choice == questions[questionNum].answer) {
+    console.log("Correct Answer");
+    questionNum++;
+    displayQuestion(questionNum);
+  } else {
+    console.log("Incorrect Answer");
+    questionNum++;
+    displayQuestion(questionNum);
+  }
+  //setAnswer(choice, questionNum);
+});
+
 //TODO: Play audio on hover and click
 function play() {
   var audio = document.getElementById("audio");
 }
-
-getAnswer();

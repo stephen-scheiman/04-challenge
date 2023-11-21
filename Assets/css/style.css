@@ -38,3 +38,16 @@ h1 {
 hr {
     margin-bottom: 50px;
 }
+
+#startButton {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightblue;
+  font-family: fantasy;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}

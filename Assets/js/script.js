@@ -79,27 +79,26 @@ var choiceFourEl = document.getElementById("choiceFour");
 var startButton = document.getElementById("startButton");
 var timerWindow = document.getElementById("timerWindow");
 
-  questionEl.textContent = "";
-  choiceOneEl.textContent = "";
-  choiceTwoEl.textContent = "";
-  choiceThreeEl.textContent = "";
-  choiceFourEl.textContent = "";
+questionEl.textContent = "";
+choiceOneEl.textContent = "";
+choiceTwoEl.textContent = "";
+choiceThreeEl.textContent = "";
+choiceFourEl.textContent = "";
 
 //Initial timer value (in ms)
 var timer = 60000;
 
-//Start the countdown timer when the user clicks on the Start Button
-startButton.addEventListener("click", function () {
+function startTimer() {
   countdownTimer = setInterval(function () {
     timer = timer - 1000;
-    timerWindow.textContent = "Time left: " + timer/1000 + " seconds";
+    timerWindow.textContent = "Time left: " + timer / 1000 + " seconds";
     displayQuestion(questionNum);
     if (timer == 0) {
       clearInterval(countdownTimer);
       gameOver();
     }
   }, 1000);
-});
+}
 
 //Sounds
 var audio = document.getElementById("audio");
@@ -133,12 +132,13 @@ choiceOneEl.addEventListener("click", function () {
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
     questionNum++;
-    rightAnswer();
+    score++;
+    rightAnswer(score);
     displayQuestion(questionNum);
   } else {
     console.log("Incorrect Answer");
     questionNum++;
-    wrongAnswer()
+    wrongAnswer();
     displayQuestion(questionNum);
   }
   //setAnswer(choice, questionNum);
@@ -162,10 +162,13 @@ choiceTwoEl.addEventListener("click", function () {
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
     questionNum++;
+    score++;
+    rightAnswer(score);
     displayQuestion(questionNum);
   } else {
     console.log("Incorrect Answer");
     questionNum++;
+    wrongAnswer();
     displayQuestion(questionNum);
   }
   //setAnswer(choice, questionNum);
@@ -189,10 +192,13 @@ choiceThreeEl.addEventListener("click", function () {
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
     questionNum++;
+    score++;
+    rightAnswer(score);
     displayQuestion(questionNum);
   } else {
     console.log("Incorrect Answer");
     questionNum++;
+    wrongAnswer();
     displayQuestion(questionNum);
   }
   //setAnswer(choice, questionNum);
@@ -216,14 +222,20 @@ choiceFourEl.addEventListener("click", function () {
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
     questionNum++;
+    score++;
+    rightAnswer(score);
     displayQuestion(questionNum);
   } else {
     console.log("Incorrect Answer");
     questionNum++;
+    wrongAnswer();
     displayQuestion(questionNum);
   }
   //setAnswer(choice, questionNum);
 });
+
+//Start the countdown timer when the user clicks on the Start Button
+startButton.addEventListener("click", startTimer);
 
 //TODO: Play audio on hover and click
 function play() {
@@ -236,11 +248,13 @@ function gameOver() {
 }
 
 //TODO: a function that tracks correct answers
-function rightAnswer() {
- score = score + 1;
+function rightAnswer(score) {
+  console.log(score);
+
 }
 
 //TODO: a function that penalizes wrong answers by decrementing the timer by five seconds
 function wrongAnswer() {
   timer = timer - 5000;
+  return(timer);
 }

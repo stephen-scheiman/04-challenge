@@ -10,6 +10,7 @@ li {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  text-decoration: none;
 }
 
 #questions {
@@ -27,6 +28,9 @@ li {
 body {
   background-color: antiquewhite;
   font-family: fantasy;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
 }
 
 h1 {
@@ -46,13 +50,26 @@ hr {
   font-family: fantasy;
   padding: 10px 15px;
   text-align: center;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 25px;
   cursor: pointer;
   margin-bottom: 50px;
+  display: inline;
 }
 
 #timerWindow {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightblue;
+  font-family: fantasy;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 50px;
+  display: inline;
+}
+
+#feedbackBox {
   border: 1px solid black;
   border-radius: 5px;
   background-color: lightblue;
@@ -63,5 +80,4 @@ hr {
   font-size: 25px;
   cursor: pointer;
   margin-bottom: 50px;
-  margin-left: 750px;
 }

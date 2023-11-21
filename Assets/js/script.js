@@ -79,11 +79,18 @@ var choiceFourEl = document.getElementById("choiceFour");
 var startButton = document.getElementById("startButton");
 var timerWindow = document.getElementById("timerWindow");
 
+function hideQuestions() {
 questionEl.textContent = "";
+questionEl.style.display = "none";
 choiceOneEl.textContent = "";
+choiceOneEl.style.display = "none";
 choiceTwoEl.textContent = "";
+choiceTwoEl.style.display = "none";
 choiceThreeEl.textContent = "";
+choiceThreeEl.style.display = "none";
 choiceFourEl.textContent = "";
+choiceFourEl.style.display = "none";
+}
 
 //Initial timer value (in ms)
 var timer = 60000;
@@ -93,7 +100,7 @@ function startTimer() {
     timer = timer - 1000;
     timerWindow.textContent = "Time left: " + timer / 1000 + " seconds";
     displayQuestion(questionNum);
-    if (timer == 0) {
+    if (timer <= 0) {
       clearInterval(countdownTimer);
       gameOver();
     }
@@ -247,14 +254,17 @@ function gameOver() {
   alert("game over dude");
 }
 
-//TODO: a function that tracks correct answers
+//A function that tracks correct answers
 function rightAnswer(score) {
   console.log(score);
-
+  var feedback = document.getElementById("feedbackBox");
+  feedback.textContent = "Your answer is: CORRRECT!";
 }
 
-//TODO: a function that penalizes wrong answers by decrementing the timer by five seconds
+//A function that penalizes wrong answers by decrementing the timer by five seconds
 function wrongAnswer() {
   timer = timer - 5000;
+  var feedback = document.getElementById("feedbackBox");
+  feedback.textContent = "Your answer is: INCORRRECT!";
   return(timer);
 }

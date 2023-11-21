@@ -75,26 +75,28 @@ var choiceTwoEl = document.getElementById("choiceTwo");
 var choiceThreeEl = document.getElementById("choiceThree");
 var choiceFourEl = document.getElementById("choiceFour");
 
-//Variable to hold the Start Button element
+//Variable to hold the Start button and timer elements
 var startButton = document.getElementById("startButton");
+var timerWindow = document.getElementById("timerWindow");
+
+  questionEl.textContent = "";
+  choiceOneEl.textContent = "";
+  choiceTwoEl.textContent = "";
+  choiceThreeEl.textContent = "";
+  choiceFourEl.textContent = "";
 
 //Initial timer value (in ms)
 var timer = 60000;
 
 //Start the countdown timer when the user clicks on the Start Button
 startButton.addEventListener("click", function () {
-  //Time that the clock started
   countdownTimer = setInterval(function () {
-    var now = new Date().getTime();
-    console.log(now);
-    var setTarget = now + timer;
-    console.log(setTarget);
-    var timeLeft = setTarget - now;
-    console.log(timeLeft);
-    var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    console.log(seconds);
-    if (timeLeft <= 0) {
+    timer = timer - 1000;
+    timerWindow.textContent = "Time left: " + timer/1000 + " seconds";
+    displayQuestion(questionNum);
+    if (timer == 0) {
       clearInterval(countdownTimer);
+      gameOver();
     }
   }, 1000);
 });
@@ -131,10 +133,12 @@ choiceOneEl.addEventListener("click", function () {
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
     questionNum++;
+    rightAnswer();
     displayQuestion(questionNum);
   } else {
     console.log("Incorrect Answer");
     questionNum++;
+    wrongAnswer()
     displayQuestion(questionNum);
   }
   //setAnswer(choice, questionNum);
@@ -224,4 +228,19 @@ choiceFourEl.addEventListener("click", function () {
 //TODO: Play audio on hover and click
 function play() {
   var audio = document.getElementById("audio");
+}
+
+//TODO: function to end game and display high score list
+function gameOver() {
+  alert("game over dude");
+}
+
+//TODO: a function that tracks correct answers
+function rightAnswer() {
+ score = score + 1;
+}
+
+//TODO: a function that penalizes wrong answers by decrementing the timer by five seconds
+function wrongAnswer() {
+  timer = timer - 5000;
 }

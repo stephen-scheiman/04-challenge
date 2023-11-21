@@ -1,42 +1,42 @@
 li {
-    display: flex;
-    flex: 1 1 auto;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 10px;
-    font-size: 20px;
-    padding: 10px;
-    background-color: lightblue;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  display: flex;
+  flex: 1 1 auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: lightblue;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 #questions {
-    display: flex;
-    flex: 1 1 auto;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 10px;
-    font-size: 25px;
-    padding: 10px;
-    background-color: lightblue;
-    align-items: flex-start; 
+  display: flex;
+  flex: 1 1 auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 25px;
+  padding: 10px;
+  background-color: lightblue;
+  align-items: flex-start;
 }
 
 body {
-    background-color: antiquewhite;
-    font-family: fantasy;
+  background-color: antiquewhite;
+  font-family: fantasy;
 }
 
 h1 {
-    display: flex;
-    text-align: center;
-    justify-content: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 hr {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 #startButton {
@@ -50,4 +50,18 @@ hr {
   font-size: 25px;
   cursor: pointer;
   margin-bottom: 50px;
+}
+
+#timerWindow {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightblue;
+  font-family: fantasy;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+  cursor: pointer;
+  margin-bottom: 50px;
+  margin-left: 750px;
 }

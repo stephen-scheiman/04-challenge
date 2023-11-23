@@ -184,10 +184,6 @@ choiceOneEl.addEventListener("mouseout", function () {
   choiceOneEl.style.fontSize = "16px";
 });
 choiceOneEl.addEventListener("click", function () {
-  // choiceOneEl.style.fontStyle = "italic";
-  // choiceOneEl.style.fontWeight = "bold";
-  // choiceOneEl.style.fontSize = "25px";
-  // choiceOneEl.style.color = "red";
   choice = 0;
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
@@ -201,7 +197,6 @@ choiceOneEl.addEventListener("click", function () {
     wrongAnswer();
     displayQuestion(questionNum);
   }
-  //setAnswer(choice, questionNum);
 });
 choiceTwoEl.addEventListener("mouseover", function () {
   choiceTwoEl.style.fontStyle = "italic";
@@ -214,10 +209,6 @@ choiceTwoEl.addEventListener("mouseout", function () {
   choiceTwoEl.style.fontSize = "16px";
 });
 choiceTwoEl.addEventListener("click", function () {
-  // choiceTwoEl.style.fontStyle = "italic";
-  // choiceTwoEl.style.fontWeight = "bold";
-  // choiceTwoEl.style.fontSize = "25px";
-  // choiceTwoEl.style.color = "red";
   choice = 1;
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
@@ -231,7 +222,6 @@ choiceTwoEl.addEventListener("click", function () {
     wrongAnswer();
     displayQuestion(questionNum);
   }
-  //setAnswer(choice, questionNum);
 });
 choiceThreeEl.addEventListener("mouseover", function () {
   choiceThreeEl.style.fontStyle = "italic";
@@ -244,10 +234,6 @@ choiceThreeEl.addEventListener("mouseout", function () {
   choiceThreeEl.style.fontSize = "16px";
 });
 choiceThreeEl.addEventListener("click", function () {
-  // choiceThreeEl.style.fontStyle = "italic";
-  // choiceThreeEl.style.fontWeight = "bold";
-  // choiceThreeEl.style.fontSize = "25px";
-  // choiceThreeEl.style.color = "red";
   choice = 2;
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
@@ -261,7 +247,6 @@ choiceThreeEl.addEventListener("click", function () {
     wrongAnswer();
     displayQuestion(questionNum);
   }
-  //setAnswer(choice, questionNum);
 });
 choiceFourEl.addEventListener("mouseover", function () {
   choiceFourEl.style.fontStyle = "italic";
@@ -274,10 +259,6 @@ choiceFourEl.addEventListener("mouseout", function () {
   choiceFourEl.style.fontSize = "16px";
 });
 choiceFourEl.addEventListener("click", function () {
-  // choiceFourEl.style.fontStyle = "italic";
-  // choiceFourEl.style.fontWeight = "bold";
-  // choiceFourEl.style.fontSize = "25px";
-  // choiceFourEl.style.color = "red";
   choice = 3;
   if (choice == questions[questionNum].answer) {
     console.log("Correct Answer");
@@ -291,7 +272,6 @@ choiceFourEl.addEventListener("click", function () {
     wrongAnswer();
     displayQuestion(questionNum);
   }
-  //setAnswer(choice, questionNum);
 });
 
 //Start the countdown timer when the user clicks on the Start Button

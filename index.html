@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Document</title>
+    <title>JavasScript Quiz Application</title>
   </head>
   <body>
-    <h1>Javascript Quiz Application</h1>
-    <hr>
+    <header>
+      <div id="highScores">View High Scores</div>
+      <h1>JavaScript Quiz Application</h1>
+      <div id="timerWindow">Time left: 60 seconds</div>
+      <hr />
+    </header>
+    <main>
+    <div id="scoreCard"></div>
     <button type="button" id="startButton">Start Quiz</button>
-    <div id="timerWindow">Time left: 60 seconds</div>
     <div id="questions"></div>
     <ol id="choices">
       <li id="choiceOne"></li>
@@ -18,9 +23,10 @@
       <li id="choiceThree"></li>
       <li id="choiceFour"></li>
     </ol>
-    <div id="feedbackBox">Your answer is: </div>
-
+    <hr />
+    <div id="feedbackBox">Your answer is:</div>
     <audio id="audio" src="./assets/mixkit-game-click-1114.wav"></audio>
     <script src="./assets/js/script.js"></script>
+  </main>
   </body>
 </html>

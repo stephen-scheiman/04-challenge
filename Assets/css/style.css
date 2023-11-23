@@ -27,21 +27,21 @@ li {
   font-size: 25px;
   padding: 10px;
   background-color: lightblue;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
 body {
   background-color: antiquewhite;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
+  text-wrap: wrap;
   flex-direction: column;
 }
 
 h1 {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  margin-bottom: 5px;
+  display: inline;
+  margin-left: 400px;
 }
 
 hr {
@@ -60,25 +60,18 @@ hr {
   cursor: pointer;
   margin-bottom: 50px;
   margin-top: 50px;
-  
+  margin-left: 525px;
 }
 
 #timerWindow {
-  border: 1px solid black;
-  max-width: max-content;
-  border-radius: 5px;
-  background-color: lightblue;
-  padding: 10px 15px;
-  text-align: center;
-  font-size: 25px;
-  margin-bottom: 50px;
-  display: inline;
+  font-size: 20px;
+  margin-bottom: 55px;
+  margin-top: -60px;
+  margin-left: 975px;
 }
 
 #feedbackBox {
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: lightblue;
+
   padding: 10px 15px;
   text-align: center;
   display: inline-block;
@@ -86,4 +79,23 @@ hr {
   font-size: 25px;
   cursor: pointer;
   margin-top: 50px;
+  margin-left: 450px;
+}
+
+#highScores {
+  font-size: 20px;
+  margin-left: 20px
+}
+
+#scoreCard {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightblue;
+  padding: 10px 15px;
+  text-align: center;
+  width: 80%;
+  height: 400px;
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: 100px;
 }

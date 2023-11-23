@@ -124,21 +124,18 @@ var choiceTwoEl = document.getElementById("choiceTwo");
 var choiceThreeEl = document.getElementById("choiceThree");
 var choiceFourEl = document.getElementById("choiceFour");
 
-//Variable to hold the Start button and timer elements
+//Variable to hold the Start button, feedback and timer elements
 var startButton = document.getElementById("startButton");
 var timerWindow = document.getElementById("timerWindow");
+var feedbackBox = document.getElementById("feedbackBox");
 
-//function hideQuestions() {
 questionEl.style.display = "none";
-
 choiceOneEl.style.display = "none";
-
 choiceTwoEl.style.display = "none";
-
 choiceThreeEl.style.display = "none";
-
 choiceFourEl.style.display = "none";
-//}
+feedbackBox.style.display = "none";
+scoreCard.style.display = "none";
 
 //Initial timer value (in ms)
 var timer = 60000;
@@ -150,7 +147,7 @@ function startTimer() {
     displayQuestion(questionNum);
     if (timer <= 0) {
       clearInterval(countdownTimer);
-      gameOver();
+      gameOver(score);
     }
   }, 1000);
 }
@@ -186,13 +183,11 @@ choiceOneEl.addEventListener("mouseout", function () {
 choiceOneEl.addEventListener("click", function () {
   choice = 0;
   if (choice == questions[questionNum].answer) {
-    console.log("Correct Answer");
     questionNum++;
     score++;
     rightAnswer(score);
     displayQuestion(questionNum);
   } else {
-    console.log("Incorrect Answer");
     questionNum++;
     wrongAnswer();
     displayQuestion(questionNum);
@@ -211,13 +206,11 @@ choiceTwoEl.addEventListener("mouseout", function () {
 choiceTwoEl.addEventListener("click", function () {
   choice = 1;
   if (choice == questions[questionNum].answer) {
-    console.log("Correct Answer");
     questionNum++;
     score++;
     rightAnswer(score);
     displayQuestion(questionNum);
   } else {
-    console.log("Incorrect Answer");
     questionNum++;
     wrongAnswer();
     displayQuestion(questionNum);
@@ -236,13 +229,11 @@ choiceThreeEl.addEventListener("mouseout", function () {
 choiceThreeEl.addEventListener("click", function () {
   choice = 2;
   if (choice == questions[questionNum].answer) {
-    console.log("Correct Answer");
     questionNum++;
     score++;
     rightAnswer(score);
     displayQuestion(questionNum);
   } else {
-    console.log("Incorrect Answer");
     questionNum++;
     wrongAnswer();
     displayQuestion(questionNum);
@@ -261,13 +252,11 @@ choiceFourEl.addEventListener("mouseout", function () {
 choiceFourEl.addEventListener("click", function () {
   choice = 3;
   if (choice == questions[questionNum].answer) {
-    console.log("Correct Answer");
     questionNum++;
     score++;
     rightAnswer(score);
     displayQuestion(questionNum);
   } else {
-    console.log("Incorrect Answer");
     questionNum++;
     wrongAnswer();
     displayQuestion(questionNum);
@@ -283,21 +272,34 @@ function play() {
 }
 
 //TODO: function to end game and display high score list
-function gameOver() {
+function gameOver(score) {
   alert("game over dude");
+  startButton.style.display = "none";
+  displayHighScores(score);
 }
 
 //A function that tracks correct answers
 function rightAnswer(score) {
   console.log(score);
-  var feedback = document.getElementById("feedbackBox");
-  feedback.textContent = "Your answer is: CORRRECT!";
+  feedbackBox.textContent = "Your answer is: CORRECT!";
+  feedbackBox.style.display = "block";
 }
 
 //A function that penalizes wrong answers by decrementing the timer by five seconds
 function wrongAnswer() {
   timer = timer - 5000;
-  var feedback = document.getElementById("feedbackBox");
-  feedback.textContent = "Your answer is: INCORRRECT!";
+  feedbackBox.textContent = "Your answer is: INCORRECT!";
+  feedbackBox.style.display = "block";
   return timer;
+}
+
+function displayHighScores(score) {
+  scoreCard.style.display = "block";
+  scoreCard.textContent = "You scored " + score + " points!";
+  questionEl.style.display = "none";
+  choiceOneEl.style.display = "none";
+  choiceTwoEl.style.display = "none";
+  choiceThreeEl.style.display = "none";
+  choiceFourEl.style.display = "none";
+  feedbackBox.style.display = "none";
 }

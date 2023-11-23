@@ -5,21 +5,13 @@ var questions = [
     choices: ["null", "object", "undefined", "string"],
     answer: 1,
   },
-  {
-    question: "What is the output of this code: console.log(2 + '2')",
-    choices: ["4", "22", "NaN", "undefined"],
-    answer: 1,
-  },
-  {
-    question: "What is the output of this code: console.log(2=='2')",
-    choices: ["true", "false", "NaN", "undefined"],
-    answer: 0,
-  },
+
   {
     question: "Which of the below is proper syntax for an IF statement",
     choices: ["if i=5 then", "if i=5", "if i==5 then", "if(i==5)"],
     answer: 3,
   },
+
   {
     question:
       "What is the correct location to reference an external JavaScript file?",
@@ -57,6 +49,63 @@ var questions = [
     choices: ["js tag", "script tag", "file tag", "java tag"],
     answer: 1,
   },
+  {
+    question: "What is the output of this code: console.log(2 + '2')",
+    choices: ["4", "22", "NaN", "undefined"],
+    answer: 1,
+  },
+  {
+    question:
+      "What is the correct JS syntax to change the content of the HTML element below?",
+    choices: [
+      'document.getElementById("demo").innerHTML = "Hello World!";',
+      '#demo.innerHTML = "Hello World!";',
+      'document.getElement("p").innerHTML = "Hello World!";',
+      'document.getElementByName("p").innerHTML = "Hello World!";',
+    ],
+    answer: 0,
+  },
+  {
+    question: 'How do you write "Hello World" in an alert box?',
+    choices: [
+      'alertBox("Hello World");',
+      'msgBox("Hello World!");',
+      'msg("Hello World");',
+      'alert("Hello World");',
+    ],
+    answer: 3,
+  },
+  {
+    question: "How do you create a function in JavaScript?",
+    choices: [
+      "function myFunction()",
+      "function = myFunction()",
+      "function:myFunction()",
+      "myfunction() = function",
+    ],
+    answer: 0,
+  },
+  {
+    question:
+      'What is the correct syntax for an IF statement to execute if "i" is NOT equal to 5?',
+    choices: ["if (i<>5)", "if i=!5 then", "if (i!=5)", "if i<>5"],
+    answer: 0,
+  },
+  {
+    question: "What is the output of this code: console.log(2=='2')",
+    choices: ["true", "false", "NaN", "undefined"],
+    answer: 0,
+  },
+  {
+    question: "How does a WHILE loop start?",
+    choices: [
+      "while (i <= 10)",
+      "while i = 1 to 10",
+      "while (i <=10; i++",
+      "do i while (i < 10)",
+    ],
+    answer: 0,
+  },
 ];
 
 //Create a variable to hold the question number
@@ -80,15 +129,15 @@ var startButton = document.getElementById("startButton");
 var timerWindow = document.getElementById("timerWindow");
 
 //function hideQuestions() {
-  questionEl.style.display = "none";
+questionEl.style.display = "none";
 
-  choiceOneEl.style.display = "none";
+choiceOneEl.style.display = "none";
 
-  choiceTwoEl.style.display = "none";
+choiceTwoEl.style.display = "none";
 
-  choiceThreeEl.style.display = "none";
+choiceThreeEl.style.display = "none";
 
-  choiceFourEl.style.display = "none";
+choiceFourEl.style.display = "none";
 //}
 
 //Initial timer value (in ms)

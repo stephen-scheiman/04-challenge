@@ -292,7 +292,7 @@ function wrongAnswer() {
   feedbackBox.style.display = "block";
   return timer;
 }
-
+// Display the High Scores card
 function displayHighScores(score) {
   scoreCard.style.display = "block";
   scoreCard.textContent = "You scored " + score + " points!";

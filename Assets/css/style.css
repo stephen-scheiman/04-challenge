@@ -1,3 +1,10 @@
+:root {
+  --main-background-color: antiquewhite;
+  --text-color: darkblue;
+  --border-color: black;
+  --button-color: lightblue;
+}
+
 li {
   display: flex;
   max-width: max-content;
@@ -46,7 +53,6 @@ h1 {
 
 hr {
   margin: 25px;
-  color: black;
 }
 
 #startButton {
@@ -71,7 +77,6 @@ hr {
 }
 
 #feedbackBox {
-
   padding: 10px 15px;
   text-align: center;
   display: inline-block;

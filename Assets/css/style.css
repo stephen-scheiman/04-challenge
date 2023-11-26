@@ -15,8 +15,8 @@ li {
   margin-top: 5px;
   margin-left: -30px;
   font-size: 20px;
-  padding: 10px;
-  background-color: lightblue;
+  margin: 10px;
+  background-color: var(--button-color);
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -27,28 +27,31 @@ li {
   display: flex;
   max-width: max-content;
   flex: 1 1 auto;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   margin: 10px;
   margin-bottom: 0px;
   font-size: 25px;
-  padding: 10px;
-  background-color: lightblue;
+  margin: 10px;
+  background-color: var(--button-color);
   align-items: center;
   justify-content: center;
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: var(--main-background-color);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
-  text-wrap: wrap;
   flex-direction: column;
+  max-width: 1200px;
 }
 
 h1 {
   display: inline;
-  margin-left: 400px;
+  border: 1px solid green;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 1200px; */
 }
 
 hr {
@@ -56,10 +59,10 @@ hr {
 }
 
 #startButton {
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
-  background-color: lightblue;
-  padding: 10px 15px;
+  background-color: var(--button-color);
+  margin: 10px 15px;
   text-align: center;
   max-width: max-content;
   font-size: 25px;
@@ -73,11 +76,11 @@ hr {
   font-size: 20px;
   margin-bottom: 55px;
   margin-top: -60px;
-  margin-left: 975px;
+  margin-left: 80%;
 }
 
 #feedbackBox {
-  padding: 10px 15px;
+  margin: 10px 15px;
   text-align: center;
   display: inline-block;
   max-width: max-content;
@@ -89,14 +92,14 @@ hr {
 
 #highScores {
   font-size: 20px;
-  margin-left: 20px
+  margin-left: 1%;
 }
 
 #scoreCard {
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
-  background-color: lightblue;
-  padding: 10px 15px;
+  background-color: var(--button-color);
+  margin: 10px 15px;
   text-align: center;
   width: 80%;
   height: 400px;

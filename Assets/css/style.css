@@ -5,78 +5,81 @@
   --button-color: lightblue;
 }
 
-li {
-  display: flex;
-  max-width: max-content;
-  flex: 1 1 auto;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 10px;
-  margin-top: 5px;
-  margin-left: -30px;
-  font-size: 20px;
-  margin: 10px;
-  background-color: var(--button-color);
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-#questions {
-  display: flex;
-  max-width: max-content;
-  flex: 1 1 auto;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-  margin: 10px;
-  margin-bottom: 0px;
-  font-size: 25px;
-  margin: 10px;
-  background-color: var(--button-color);
-  align-items: center;
-  justify-content: center;
-}
-
 body {
   background-color: var(--main-background-color);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
 }
 
-h1 {
-  display: inline;
-  border: 1px solid green;
+ol {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  max-width: max-content;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 20px;
+  background-color: var(--button-color);
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0px 10px;
   margin-left: auto;
   margin-right: auto;
-  /* width: 1200px; */
 }
 
-hr {
-  margin: 25px;
-}
-
-#startButton {
+#questions {
+  max-width: max-content;
   border: 1px solid var(--border-color);
   border-radius: 5px;
-  background-color: var(--button-color);
-  margin: 10px 15px;
-  text-align: center;
-  max-width: max-content;
   font-size: 25px;
-  cursor: pointer;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  margin-left: 525px;
+  background-color: var(--button-color);
+  padding: 0px 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+ font-size: 250%;
+ text-align: center;
+}
+
+#highScores {
+  font-size: 20px;
 }
 
 #timerWindow {
   font-size: 20px;
-  margin-bottom: 55px;
-  margin-top: -60px;
-  margin-left: 80%;
+}
+
+hr {
+  margin: 25px 0px;
+}
+
+#startButton {
+  display:block;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--button-color);
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
 }
 
 #feedbackBox {
@@ -87,12 +90,9 @@ hr {
   font-size: 25px;
   cursor: pointer;
   margin-top: 50px;
-  margin-left: 450px;
-}
-
-#highScores {
-  font-size: 20px;
-  margin-left: 1%;
+  margin-left: 450px;  
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #scoreCard {
@@ -105,5 +105,6 @@ hr {
   height: 400px;
   font-size: 25px;
   cursor: pointer;
-  margin-left: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }

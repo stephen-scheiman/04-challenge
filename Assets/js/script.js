@@ -129,6 +129,11 @@ var startButton = document.getElementById("startButton");
 var timerWindow = document.getElementById("timerWindow");
 var feedbackBox = document.getElementById("feedbackBox");
 
+//Variables for the High Score List
+var userName = document.querySelector("#userName");
+var highScores = [];
+var userNameForm = document.querySelector("#userNameForm");
+
 questionEl.style.display = "none";
 choiceOneEl.style.display = "none";
 choiceTwoEl.style.display = "none";
@@ -138,9 +143,10 @@ feedbackBox.style.display = "none";
 scoreCard.style.display = "none";
 
 //Initial timer value (in ms)
-var timer = 60000;
+var timer = 10000;
 
 function startTimer() {
+  startButton.style.display = "none";
   countdownTimer = setInterval(function () {
     timer = timer - 1000;
     timerWindow.textContent = "Time left: " + timer / 1000 + " seconds";
@@ -273,14 +279,12 @@ function play() {
 
 //TODO: function to end game and display high score list
 function gameOver(score) {
-  alert("game over dude");
   startButton.style.display = "none";
-  displayHighScores(score);
+  displayScore(score);
 }
 
 //A function that tracks correct answers
 function rightAnswer(score) {
-  console.log(score);
   feedbackBox.textContent = "Your answer is: CORRECT!";
   feedbackBox.style.display = "block";
 }
@@ -292,14 +296,50 @@ function wrongAnswer() {
   feedbackBox.style.display = "block";
   return timer;
 }
-// Display the High Scores card
-function displayHighScores(score) {
-  scoreCard.style.display = "block";
-  scoreCard.textContent = "You scored " + score + " points!";
+
+// Display the user's score
+function displayScore(score) {
+  scoreCard.style.display = "flex";
+  scoreCard.textContent = "GAME OVER: You scored " + score + " points!";
   questionEl.style.display = "none";
   choiceOneEl.style.display = "none";
   choiceTwoEl.style.display = "none";
   choiceThreeEl.style.display = "none";
   choiceFourEl.style.display = "none";
   feedbackBox.style.display = "none";
+  saveHighScore(score);
 }
+
+function saveHighScore(score) {
+  userNameForm.style.display = "block";
+  userNameForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var name = userName.value.trim();
+    if (name === "") {
+      return;
+    }
+    var newScore = {
+      score,
+      name,
+    };
+    highScores.push(name, score);
+    console.log(highScores);
+    // localStorage.setItem(highScores, JSON.stringify(highScores));
+    userName.value = "";
+    displayHighScores(score);
+  });
+}
+
+function displayHighScores(score) {
+  var scoreList = document.querySelector("#highScoreList");
+  scoreList.style.display = "flex";
+  // var storedScores = JSON.parse(localStorage.getItem("highScores"));
+  // if (scoreList !== null) {
+  //   highScores = storedScores;
+    for (i = 0; i <= 5; i++) {
+      var li = document.createElement("li");
+      li.textContent = highScores[i];
+      console.log(li);
+    }
+  }
+//}

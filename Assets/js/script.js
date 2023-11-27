@@ -319,10 +319,10 @@ function saveHighScore(score) {
       return;
     }
     var newScore = {
-      score,
       name,
+      score,
     };
-    highScores.push(name, score);
+    highScores.push(newScore);
     console.log(highScores);
     // localStorage.setItem(highScores, JSON.stringify(highScores));
     userName.value = "";

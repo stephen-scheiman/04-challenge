@@ -131,7 +131,7 @@ var feedbackBox = document.getElementById("feedbackBox");
 
 //Variables for the High Score List
 var userName = document.querySelector("#userName");
-var highScores = [];
+var highScores = [{name, score}];
 var userNameForm = document.querySelector("#userNameForm");
 var scoreCard = document.querySelector("#scoreCard");
 var scoresList = document.querySelector("#scoresList");
@@ -328,24 +328,26 @@ function saveHighScore(score) {
     highScores.push(newScore);
     localStorage.setItem(highScores, JSON.stringify(highScores));
     userName.value = "";
-    displayHighScores(score);
+    userNameForm.style.display = "none";
+    displayHighScores(score, name);
   });
 }
 
-function displayHighScores(score) {
+function displayHighScores(score, name) {
   var scoresList = document.querySelector("#scoresList");
   scoresList.style.display = "flex";
-  var scoresLength = highScores.length
   var storedScores = JSON.parse(localStorage.getItem("highScores"));
+  console.log(storedScores);
+  var arrLength = highScores.length;
   if (storedScores !== null) {
-    highScores = storedScores;
+    for (i=0; i<=storedScores.length; i++){
+    highScores[i] = storedScores[i];
   }
-  var ol = document.querySelector("#list")
-    for (i = 0; i <= scoresLength-1; i++) {
+}
+  var ol = document.querySelector("#list");
+  for (i=0; i<=5; i++){
       var li = document.createElement("li");
-      li.textContent = highScores[i];
-      console.log(highScores[i]);
+      li.textContent = highScores[i].name + highScores[i].score;
       ol.appendChild(li);
     }
   }
-

@@ -146,7 +146,7 @@ scoreCard.style.display = "none";
 scoresList.style.display = "none";
 
 //Initial timer value (in ms)
-var timer = 10000;
+var timer = 60000;
 
 function startTimer() {
   startButton.style.display = "none";

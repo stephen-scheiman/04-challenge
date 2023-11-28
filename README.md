@@ -40,4 +40,5 @@ https://stephen-scheiman.github.io/04-challenge
 3- Set variables at the global context when possible
 4- Look into using jQuery for high scores
 5- Hoping for feedback from the graders on how to fix the high scores
+6- Weirdness with Git renaming assets to Assets and breaking my app
 

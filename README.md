@@ -34,5 +34,10 @@ https://github.com/stephen-scheiman/04-challenge
 
 https://stephen-scheiman.github.io/04-challenge
 
-
+## Lessons Learned
+1- Struggling with the high scores list, likey have to start over
+2- Keep track of parameters that are being passed
+3- Set variables at the global context when possible
+4- Look into using jQuery for high scores
+5- Hoping for feedback from the graders on how to fix the high scores
 

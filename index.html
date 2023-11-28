@@ -14,18 +14,8 @@
     </header>
     <hr />
     <main>
-      <section id="scoreCard"></section>
-        <ol id="highScoreList">
-          <!-- <li id="scoreOne"></li>
-          <li id="scoreTwo"></li>
-          <li id="scoreThree"></li>
-          <li id="scoreFour"></li>
-          <li id="scoreFive"></li> -->
-        </ol>
-        <form id="userNameForm" method="POST">
-          <label for="userName">Enter your first name: </label>
-          <input type="text" name="userName" id="userName" />
-        </form>
+      <div id="scoreCard"> </div>
+     
       <button type="button" id="startButton">Start Quiz</button>
       <div id="questions"></div>
       <ol id="choices">
@@ -35,6 +25,14 @@
         <li id="choiceFour"></li>
       </ol>
       <hr />
+      <div id="scoresList">
+        <form id="userNameForm" method="POST">
+          <label for="userName">Enter your first name: </label>
+          <input type="text" name="userName" id="userName" />
+        </form>
+        <p></p>
+        <ol id="list">High Scores</ol>
+      </div>
       <div id="feedbackBox">Your answer is:</div>
       <audio id="audio" src="./assets/mixkit-game-click-1114.wav"></audio>
       <script src="./assets/js/script.js"></script>

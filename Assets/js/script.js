@@ -133,6 +133,8 @@ var feedbackBox = document.getElementById("feedbackBox");
 var userName = document.querySelector("#userName");
 var highScores = [];
 var userNameForm = document.querySelector("#userNameForm");
+var scoreCard = document.querySelector("#scoreCard");
+var scoresList = document.querySelector("#scoresList");
 
 questionEl.style.display = "none";
 choiceOneEl.style.display = "none";
@@ -141,6 +143,7 @@ choiceThreeEl.style.display = "none";
 choiceFourEl.style.display = "none";
 feedbackBox.style.display = "none";
 scoreCard.style.display = "none";
+scoresList.style.display = "none";
 
 //Initial timer value (in ms)
 var timer = 10000;
@@ -311,7 +314,7 @@ function displayScore(score) {
 }
 
 function saveHighScore(score) {
-  userNameForm.style.display = "block";
+  scoresList.style.display = "block";
   userNameForm.addEventListener("submit", function (event) {
     event.preventDefault();
     var name = userName.value.trim();
@@ -323,23 +326,26 @@ function saveHighScore(score) {
       score,
     };
     highScores.push(newScore);
-    console.log(highScores);
-    // localStorage.setItem(highScores, JSON.stringify(highScores));
+    localStorage.setItem(highScores, JSON.stringify(highScores));
     userName.value = "";
     displayHighScores(score);
   });
 }
 
 function displayHighScores(score) {
-  var scoreList = document.querySelector("#highScoreList");
-  scoreList.style.display = "flex";
-  // var storedScores = JSON.parse(localStorage.getItem("highScores"));
-  // if (scoreList !== null) {
-  //   highScores = storedScores;
-    for (i = 0; i <= 5; i++) {
+  var scoresList = document.querySelector("#scoresList");
+  scoresList.style.display = "flex";
+  var scoresLength = highScores.length
+  var storedScores = JSON.parse(localStorage.getItem("highScores"));
+  if (storedScores !== null) {
+    highScores = storedScores;
+  }
+  var ol = document.querySelector("#list")
+    for (i = 0; i <= scoresLength-1; i++) {
       var li = document.createElement("li");
       li.textContent = highScores[i];
-      console.log(li);
+      console.log(highScores[i]);
+      ol.appendChild(li);
     }
   }
-//}
+

@@ -95,13 +95,17 @@ hr {
   background-color: var(--button-color);
   margin: 10px 15px;
   justify-content: center;
+  align-items: center;
   font-size: 25px;
 }
 
-#userNameForm{
-  display: none;
-}
-
-#highScores{
-  display: none;
+#scoresList{
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--button-color);
+  margin: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
 }
